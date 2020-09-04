@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TwoSum</title>
+</head>
+
+<body>
+  <script>
+    /**
+     * @param {number[]} nums
+     * @param {number} target
+     * @return {number[]}
+     */
+    var twoSum = function (nums, target) {
+      let output = [];
+      nums.forEach((item, idx) => {
+        for (let i = 0; i < nums.length; i++) {
+          if (item + nums[i] === target && idx !== i) output.push(idx)
+        }
+      })
+      return output
+    };
+
+    // example 1 Output: [0,1]
+    // Because nums[0] + nums[1] == 9, we return [0, 1]
+    var nums = [2, 7, 11, 15]
+    var target = 9
+
+    // example 2 Output: [1,2]
+    // var nums = [3, 2, 4]
+    // var target = 6
+
+    // example 3 Output: [0,1]
+    // var nums = [3, 3]
+    // var target = 6
+
+    console.log(twoSum(nums, target));
+  </script>
+</body>
+
+</html>
